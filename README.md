@@ -10,4 +10,4 @@ Currently, two official plugins are available:
 # TrabajaMON
 
 Por Esteban Póvez Rojas
-Website: https://nashdnash.github.io/TrabajaMON/#/creador
+Website: https://nashdnash.github.io/TrabajaMON/#/
