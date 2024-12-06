@@ -7,7 +7,7 @@ export const Random = async (isNumber, isName=false) => {
     }
     else{
         try{
-            const respuesta = await axios.get("https://67093567af1a3998baa0c08b.mockapi.io/proy1/LitaTrabajos/"+String(Math.floor(Math.random()*100+1)));
+            const respuesta = await axios.get("http://127.0.0.1:8000/combinacion/"+String(Math.floor(Math.random()*100+1)));
             if(isName){
                 return respuesta.data["Nombre"];
             }
