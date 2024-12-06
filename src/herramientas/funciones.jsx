@@ -45,13 +45,13 @@ export const getAPIbyID = async (id) => {
 
 export const postAPI = async () => {
     var Mon = {
-        "nombre": document.getElementById("nombre").value,
-        "edad": document.getElementById("edad").valueAsNumber,
-        "profesion": document.getElementById("profesion").value,
-        "vida": document.getElementById("vida").valueAsNumber,
-        "ataque": document.getElementById("ataque").valueAsNumber,
-        "defensa": document.getElementById("defensa").valueAsNumber,
-        "velocidad": document.getElementById("velocidad").valueAsNumber
+        "nombre": document.getElementById("Nombre").value,
+        "edad": document.getElementById("Edad").valueAsNumber,
+        "profesion": document.getElementById("Profesion").value,
+        "vida": document.getElementById("Vida").valueAsNumber,
+        "ataque": document.getElementById("Ataque").valueAsNumber,
+        "defensa": document.getElementById("Defensa").valueAsNumber,
+        "velocidad": document.getElementById("Velocidad").valueAsNumber
     }
     try{
         axios.post("http://127.0.0.1:8000/api/trabajamon/",Mon)
