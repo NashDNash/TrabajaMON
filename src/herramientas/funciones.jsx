@@ -23,7 +23,7 @@ export const Random = async (isNumber, isName=false) => {
 }
 
 export const getAllAPI = async () => {
-    await axios.get("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON/").then(
+    await axios.get("http://127.0.0.1:8000/trabajamon/").then(
         (response) => {
             return response.data;
         }
@@ -35,7 +35,7 @@ export const getAllAPI = async () => {
 
 export const getAPIbyID = async (id) => {
     try{
-        const respuesta = await axios.get("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON/"+String(id));
+        const respuesta = await axios.get("http://127.0.0.1:8000/trabajamon/"+String(id));
         return respuesta.data;
     }
     catch{
@@ -54,7 +54,7 @@ export const postAPI = async () => {
         "velocidad": document.getElementById("Velocidad").valueAsNumber
     }
     try{
-        axios.post("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON",Mon)
+        axios.post("http://127.0.0.1:8000/trabajamon/",Mon)
     }
     catch{
         console.log(error.response)
@@ -73,7 +73,7 @@ export const putAPI = async () => {
         "velocidad": document.getElementById("Velocidad").valueAsNumber
     };
     try{
-        await axios.put("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON/"+id,Mon)
+        await axios.put("http://127.0.0.1:8000/trabajamon/"+id,Mon)
     }
     catch{
         console.log(error.response)
@@ -83,7 +83,7 @@ export const putAPI = async () => {
 export const deleteAPI = async () => {
     const id = String(document.getElementById("buscarID").value);
     try{
-        await axios.delete("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON/"+id).then( () => {
+        await axios.delete("http://127.0.0.1:8000/trabajamon/"+id).then( () => {
             document.getElementById("buscarID").value = () => {
                 if(id == 1){
                     return 1
