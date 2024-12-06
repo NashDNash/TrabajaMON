@@ -7,7 +7,7 @@ export const Random = async (isNumber, isName=false) => {
     }
     else{
         try{
-            const respuesta = await axios.get("http://127.0.0.1:8000/combinacion/"+String(Math.floor(Math.random()*100+1)));
+            const respuesta = await axios.get("http://127.0.0.1:8000/api/combinacion/"+String(Math.floor(Math.random()*100+1)));
             if(isName){
                 return respuesta.data["Nombre"];
             }
@@ -23,7 +23,7 @@ export const Random = async (isNumber, isName=false) => {
 }
 
 export const getAllAPI = async () => {
-    await axios.get("http://127.0.0.1:8000/trabajamon/").then(
+    await axios.get("http://127.0.0.1:8000/api/trabajamon/").then(
         (response) => {
             return response.data;
         }
@@ -35,7 +35,7 @@ export const getAllAPI = async () => {
 
 export const getAPIbyID = async (id) => {
     try{
-        const respuesta = await axios.get("http://127.0.0.1:8000/trabajamon/"+String(id));
+        const respuesta = await axios.get("http://127.0.0.1:8000/api/trabajamon/"+String(id));
         return respuesta.data;
     }
     catch{
@@ -54,7 +54,7 @@ export const postAPI = async () => {
         "velocidad": document.getElementById("Velocidad").valueAsNumber
     }
     try{
-        axios.post("http://127.0.0.1:8000/trabajamon/",Mon)
+        axios.post("http://127.0.0.1:8000/api/trabajamon/",Mon)
     }
     catch{
         console.log(error.response)
@@ -73,7 +73,7 @@ export const putAPI = async () => {
         "velocidad": document.getElementById("Velocidad").valueAsNumber
     };
     try{
-        await axios.put("http://127.0.0.1:8000/trabajamon/"+id,Mon)
+        await axios.put("http://127.0.0.1:8000/api/trabajamon/"+id,Mon)
     }
     catch{
         console.log(error.response)
@@ -83,7 +83,7 @@ export const putAPI = async () => {
 export const deleteAPI = async () => {
     const id = String(document.getElementById("buscarID").value);
     try{
-        await axios.delete("http://127.0.0.1:8000/trabajamon/"+id).then( () => {
+        await axios.delete("http://127.0.0.1:8000/api/trabajamon/"+id).then( () => {
             document.getElementById("buscarID").value = () => {
                 if(id == 1){
                     return 1
