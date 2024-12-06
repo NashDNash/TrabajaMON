@@ -8,7 +8,7 @@ export default function AllWorkMON() {
     const [personas,setPersonas] = useState([])
     useEffect( () =>{
         const cargarPersonas = async () =>{
-            const personas = await axios.get("https://67093567af1a3998baa0c08b.mockapi.io/proy1/TrabajaMON/").then(
+            const personas = await axios.get("http://127.0.0.1:8000/api/trabajamon/").then(
                 (response) => {
                     setPersonas(response.data);
                 }
