@@ -21,7 +21,7 @@ export default function AllWorkMON() {
 
     var completo = personas.map( persona => {
         {var i= parseInt(persona['id'])}
-        return(<Accordion.Item eventKey={i-1}>
+        return(<Accordion.Item eventKey={i-1} key={i-1}>
             <Accordion.Header>{persona['id']+': '+persona["nombre"]+' the '+persona['profesion']}</Accordion.Header>
             <Accordion.Body>
                 <Container fluid>
